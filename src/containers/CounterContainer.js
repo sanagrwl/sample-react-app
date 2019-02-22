@@ -4,7 +4,6 @@ import { incrementCounterAction } from '../actions/CounterActions';
 
 const CounterContainer = ({ dispatch, count }) => (
     <div>
-        <p>name: {name}</p>
         <p onClick={() => dispatch(incrementCounterAction())}>count: {count}</p>
     </div>
 );
