@@ -1,8 +1,8 @@
 import { combineReducers, createStore} from 'redux';
-import CounterReducer from './reducers/CounterReducer';
+import DashboardReducer from './reducers/DashboardReducer';
 
 const rootReducer= combineReducers({
-    counter: CounterReducer
+    dashboard: DashboardReducer
 });
 
 const store = createStore(rootReducer);

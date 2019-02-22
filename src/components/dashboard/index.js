@@ -14,6 +14,9 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './LineItems';
+import {openDrawerAction, closeDrawerAction} from '../../actions/DashboardActions'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -96,36 +99,35 @@ const styles = theme => ({
 });
   
 class Dashboard extends React.Component {
-    state = {
-        open: true,
-    };
 
-    handleDrawerOpen = () => {
-        this.setState({ open: true });
+  handleDrawerOpen = () => {
+      const {dispatch} = this.props;
+      dispatch(openDrawerAction())
     };
 
     handleDrawerClose = () => {
-        this.setState({ open: false });
+      const {dispatch} = this.props;
+      dispatch(closeDrawerAction())
     };
 
     render() {
-        const { classes } = this.props;
+        const { classes, children, drawerOpen } = this.props;
 
         return (
         <div className={classes.root}>
             <CssBaseline />
             <AppBar
             position="absolute"
-            className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
+            className={classNames(classes.appBar, drawerOpen && classes.appBarShift)}
             >
-            <Toolbar disableGutters={!this.state.open} className={classes.toolbar}>
+            <Toolbar disableGutters={!drawerOpen} className={classes.toolbar}>
                 <IconButton
                 color="inherit"
                 aria-label="Open drawer"
                 onClick={this.handleDrawerOpen}
                 className={classNames(
                     classes.menuButton,
-                    this.state.open && classes.menuButtonHidden,
+                    drawerOpen && classes.menuButtonHidden,
                 )}
                 >
                 <MenuIcon />
@@ -149,9 +151,9 @@ class Dashboard extends React.Component {
             <Drawer
             variant="permanent"
             classes={{
-                paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
+                paper: classNames(classes.drawerPaper, !drawerOpen && classes.drawerPaperClose),
             }}
-            open={this.state.open}
+            open={drawerOpen}
             >
             <div className={classes.toolbarIcon}>
                 <IconButton onClick={this.handleDrawerClose}>
@@ -165,15 +167,15 @@ class Dashboard extends React.Component {
             </Drawer>
             <main className={classes.content}>
             <div className={classes.appBarSpacer} />
-            <Typography variant="h4" gutterBottom component="h2">
-                Orders
-            </Typography>
+
+            {children}
+
             <Typography component="div" className={classes.chartContainer}>
                 {/* <SimpleLineChart /> */}
             </Typography>
-            <Typography variant="h4" gutterBottom component="h2">
+            {/* <Typography variant="h4" gutterBottom component="h2">
                 Products
-            </Typography>
+            </Typography> */}
             <div className={classes.tableContainer}>
                 {/* <SimpleTable /> */}
             </div>
@@ -183,4 +185,8 @@ class Dashboard extends React.Component {
     }
 }
 
-export default withStyles(styles)(Dashboard);
+const mapStateToProps = (state) => state.dashboard
+
+const dashboardWithStyles = withStyles(styles)(Dashboard);
+const connectedDashboard = connect(mapStateToProps)(dashboardWithStyles)
+export default withRouter(connectedDashboard);
