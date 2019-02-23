@@ -12,7 +12,6 @@ class CategoriesContainer extends React.Component {
     render() {
         return <CategoriesComponent />;
     }
-    
 }
 
 const mapDispatchToProps = (dispatch) => {

@@ -6,7 +6,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import HomeIcon from '@material-ui/icons/Home';
 import CategoryIcon from '@material-ui/icons/Category';
 import AssignmentIcon from '@material-ui/icons/Assignment';
-import * as Routes from '../../Routes';
+import Routes from '../../Routes';
 import { Link } from 'react-router-dom'
 
 export const mainListItems = (
