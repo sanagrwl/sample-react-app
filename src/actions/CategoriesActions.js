@@ -1,15 +1,24 @@
-export const GET_ROOT_CATEGORIES = 'GET_ROOT_CATEGORIES';
-export const GET_ROOT_CATEGORIES_API_SUCCESS = 'GET_ROOT_CATEGORIES_API_SUCCESS';
+export const actionTypes = {
+    GET_ROOT_CATEGORIES: 'GET_ROOT_CATEGORIES',
+    GET_ROOT_CATEGORIES_API_SUCCESS: 'GET_ROOT_CATEGORIES_API_SUCCESS'
+}
 
-export function getRootCategories() {
+const getRootCategories = () => {
     return {
-        type: GET_ROOT_CATEGORIES
+        type: actionTypes.GET_ROOT_CATEGORIES
     }
 }
 
-export function getRootCatgoriesAPISuccess(payload) {
+const getRootCatgoriesAPISuccess = (payload) => {
     return {
-        type: GET_ROOT_CATEGORIES_API_SUCCESS,
+        type: actionTypes.GET_ROOT_CATEGORIES_API_SUCCESS,
         payload
     }
 }
+
+const actions = {
+    getRootCategories,
+    getRootCatgoriesAPISuccess
+}
+
+export default actions;

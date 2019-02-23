@@ -1,6 +1,6 @@
 import { testSaga } from 'redux-saga-test-plan';
-import * as service from '../services/CategoriesService'
-import * as actions from '../actions/CategoriesActions';
+import service from '../services/CategoriesService'
+import actions from '../actions/CategoriesActions';
 import {getRootCategories} from './CategoriesSaga';
 
 describe('Categories Saga', () => {

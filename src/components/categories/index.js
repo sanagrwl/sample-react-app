@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {getRootCategories} from '../../actions/CategoriesActions';
+import actions from '../../actions/CategoriesActions';
 import CategoriesComponent from './CategoriesComponent';
 
 class CategoriesContainer extends React.Component {
@@ -18,7 +18,7 @@ class CategoriesContainer extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         getRootCategories: () => {
-            dispatch(getRootCategories())
+            dispatch(actions.getRootCategories())
         }
     }
 };

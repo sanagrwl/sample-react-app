@@ -1,6 +1,6 @@
 import { takeEvery, put, call } from 'redux-saga/effects';
-import * as actions from '../actions/CategoriesActions';
-import * as service from '../services/CategoriesService'
+import actions, {actionTypes} from '../actions/CategoriesActions';
+import service from '../services/CategoriesService'
 
 export function* getRootCategories() {    
     const data = yield call(service.getRootCategories)
@@ -8,5 +8,5 @@ export function* getRootCategories() {
 }
 
 export function* watchIncrementAsync() {
-    yield takeEvery(actions.GET_ROOT_CATEGORIES, getRootCategories)
+    yield takeEvery(actionTypes.GET_ROOT_CATEGORIES, getRootCategories)
   }
