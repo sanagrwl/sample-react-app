@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomePage from './containers/HomePage';
 import * as Routes from './Routes';
 import Dashboard from './components/dashboard';
+import Categories from './components/categories';
 
 const routesConfig = [
   {
@@ -13,7 +14,7 @@ const routesConfig = [
   {
       path: Routes.CATEGORIES,
       exact: true,
-      component: () => <h2>categories</h2>
+      component: () => <Categories/>
   }
 ];
 
