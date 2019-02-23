@@ -1,14 +1,12 @@
-import {
-  OPEN_DRAWER, CLOSE_DRAWER
-} from '../../actions/DashboardActions';
+import { actionTypes as at } from '../../actions/DashboardActions';
 
 const initialState = {drawerOpen: false}
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-      case OPEN_DRAWER:
+      case at.OPEN_DRAWER:
         return Object.assign({}, state, {drawerOpen: true});
-      case CLOSE_DRAWER:
+      case at.CLOSE_DRAWER:
         return Object.assign({}, state, {drawerOpen: false});
       default:
         return state;

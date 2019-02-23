@@ -1,14 +1,27 @@
-export const OPEN_DRAWER = 'OPEN_SIDE_PANEL';
-export const CLOSE_DRAWER = 'CLOSE_SIDE_PANEL';
 
-export function openDrawerAction() {
+export const actionTypes =  [
+    'OPEN_DRAWER',
+    'CLOSE_DRAWER'
+].reduce((acc, t) => {
+     acc[t] = t
+     return acc;
+ }, {})
+
+const openDrawerAction = () => {
     return {
-        type: OPEN_DRAWER
+        type: actionTypes.OPEN_DRAWER
     }
 }
 
-export function closeDrawerAction() {
+const closeDrawerAction = () => {
     return {
-        type: CLOSE_DRAWER
+        type: actionTypes.CLOSE_DRAWER
     }
 }
+
+const actions = {
+    openDrawerAction,
+    closeDrawerAction
+}
+
+export default actions;

@@ -17,9 +17,7 @@ class CategoriesContainer extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getRootCategories: () => {
-            dispatch(actions.getRootCategories())
-        }
+        getRootCategories: () => dispatch(actions.getRootCategories())
     }
 };
 
