@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Categories from '../components/categories/CategoriesContainer'
+import Categories from '../components/categories'
 
 const CategoriesPage = () => {
     return (
