@@ -7,6 +7,6 @@ export function* getRootCategories() {
     yield put(actions.getRootCatgoriesAPISuccess(data))
 }
 
-export function* watchIncrementAsync() {
+export function* watchGetRootCategories() {
     yield takeEvery(actionTypes.GET_ROOT_CATEGORIES, getRootCategories)
   }

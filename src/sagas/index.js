@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects'
-import { getRootCategories } from './CategoriesSaga';
+import { watchGetRootCategories } from './CategoriesSaga';
 
 export default function* rootSaga() {
     yield all([
-        getRootCategories()
+        watchGetRootCategories()
     ])
   }
