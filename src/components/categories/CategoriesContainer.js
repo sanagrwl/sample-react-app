@@ -10,7 +10,8 @@ class CategoriesContainer extends React.Component {
     }
 
     render() {
-        return <CategoriesComponent />;
+        const {categories} = this.props;
+        return <CategoriesComponent categories={categories}/>;
     }
 }
 
@@ -20,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-const mapStateToProps = (state) => {return {}}
+const mapStateToProps = ({categories}) => categories;
 
 export default connect(mapStateToProps, mapDispatchToProps)(CategoriesContainer);
 

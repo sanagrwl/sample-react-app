@@ -1,5 +1,5 @@
 const getRootCategories = () => {
-    return [{name: "Watch"}]
+    return [{name: "Watch"}, {name: "Air Curtains"}]
 }
 
 const service = {
