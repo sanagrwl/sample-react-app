@@ -1,17 +1,15 @@
 import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 
 class CategoriesComponent extends React.Component {
     render() {
         const {categories} = this.props;
         return (
             <div>
+                <ul>
                 {categories.map((c, index) => 
-                    <ListItem key={index}>
-                        <ListItemText>{c.name}</ListItemText>
-                    </ListItem>
+                    <li key={index}>{c.name}</li>
                 )}
+                </ul>
             </div>
             
         );

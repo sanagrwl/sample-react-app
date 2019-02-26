@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Dashboard from './components/dashboard';
+import Navigation from './components/navigation';
 import {routesConfig} from './Routes';
 
 const App = () => (
   <Router>
-    <Dashboard>
+    <Navigation>
       {routesConfig.map((route, index) => (
         <Route
           key={index}
@@ -14,7 +14,7 @@ const App = () => (
           component={route.component}
         />
       ))}
-    </Dashboard>
+    </Navigation>
   </Router>
 );
 
