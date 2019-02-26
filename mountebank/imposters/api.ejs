@@ -1,0 +1,16 @@
+{
+    "port": 4545,
+    "protocol": "http",
+    "name": "categories stub",
+    "allowCORS": true,
+    "stubs": [
+        <% include ../stubs/getCategoriesStub.json %>
+    ],
+    "defaultResponse": {
+        "statusCode": 200,
+        "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE"
+        }
+    }
+}

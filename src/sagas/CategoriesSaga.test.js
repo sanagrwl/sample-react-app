@@ -5,12 +5,13 @@ import {getRootCategories} from './CategoriesSaga';
 
 describe('Categories Saga', () => {
   it('get all root categories', () => {
-    const payload = [{name: "Air Curtains"}]
+    const response = {data: [{name: "Air Curtains"}]}
+    
     testSaga(getRootCategories)
     .next()
     .call(service.getRootCategories)
-    .next(payload)
-    .put(actions.getRootCatgoriesAPISuccess(payload))
+    .next(response)
+    .put(actions.getRootCatgoriesAPISuccess(response.data))
     .next()
     .isDone();
     

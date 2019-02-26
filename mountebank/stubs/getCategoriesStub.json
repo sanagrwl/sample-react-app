@@ -1,0 +1,21 @@
+{
+    "predicates": [
+      {
+        "equals": {
+          "method": "GET",
+          "path": "/categories"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "is": {
+          "statusCode": 200,
+          "body": [
+            {"name": "Watches"},
+            {"name": "Air Curtains"}
+          ]
+        }
+      }
+    ]
+  }

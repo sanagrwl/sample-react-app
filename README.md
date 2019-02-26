@@ -1,13 +1,21 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+```
 Node: v10.12.0
 npm: v6.4.1
+```
 
 ## Available Scripts
 
 In the project directory, you can run:
 
 ### `npm install`
+
+### `npm run stubs`
+Runs the stubs using [Mountebank](https://github.com/bbyars/mountebank)
+
+Mountebank server runs on port 2525 and stubs on port 4545.<br/>
+Note: CORS is allowed as default in stubs.
 
 ### `npm start`
 

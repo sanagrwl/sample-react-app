@@ -3,7 +3,7 @@ import actions, {actionTypes} from '../actions/CategoriesActions';
 import service from '../services/CategoriesService'
 
 export function* getRootCategories() {    
-    const data = yield call(service.getRootCategories)
+    const { data } = yield call(service.getRootCategories)
     yield put(actions.getRootCatgoriesAPISuccess(data))
 }
 

@@ -7,8 +7,8 @@ class CategoriesComponent extends React.Component {
         const {categories} = this.props;
         return (
             <div>
-                {categories.map(c => 
-                    <ListItem>
+                {categories.map((c, index) => 
+                    <ListItem key={index}>
                         <ListItemText>{c.name}</ListItemText>
                     </ListItem>
                 )}

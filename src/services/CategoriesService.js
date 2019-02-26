@@ -1,5 +1,7 @@
+import API from './api';
+
 const getRootCategories = () => {
-    return [{name: "Watch"}, {name: "Air Curtains"}]
+    return API.get("/categories")
 }
 
 const service = {
