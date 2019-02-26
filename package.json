@@ -18,7 +18,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "stubs": "mb --configfile mountebank/imposters.ejs --loglevel debug --port 2525"
+    "stubs": "mb --configfile mountebank/imposters.ejs --loglevel debug --port 2525",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -30,6 +32,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "cypress": "^3.1.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "jest-enzyme": "^7.0.1",
