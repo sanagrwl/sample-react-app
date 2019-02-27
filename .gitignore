@@ -25,3 +25,7 @@ yarn-error.log*
 # mountebank
 mb*.log
 mb.pid
+
+# cypress
+cypress/screenshots
+cypress/videos
