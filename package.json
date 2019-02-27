@@ -23,7 +23,7 @@
     "cypress:open": "cypress open",
     "cypress:smoke": "cypress run --spec cypress/e2e/smoke/*.test.js",
     "cypress:all": "cypress run",
-    "pre-commit": "npm run non-interactive-test & npm run cypress:all"
+    "pre-commit": "npm run non-interactive-test && npm run cypress:all"
 
   },
   "eslintConfig": {
